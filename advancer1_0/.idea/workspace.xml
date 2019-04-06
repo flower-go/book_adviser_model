@@ -25,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/solution.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+            <state relative-caret-position="102">
+              <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
               <folding>
                 <element signature="e#76#95#0" expanded="true" />
               </folding>
@@ -39,6 +39,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>tolkien</find>
+      <find>loc</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -103,7 +104,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.solution">
     <configuration name="scratch" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="advancer1_0" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -125,8 +126,30 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="solution" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="advancer1_0" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/solution.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.solution" />
         <item itemvalue="Python.scratch" />
       </list>
     </recent_temporary>
@@ -149,7 +172,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.25313947" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25313947" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -157,7 +180,7 @@
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" />
       <window_info anchor="bottom" id="Version Control" order="5" />
-      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -185,6 +208,11 @@
           <line>34</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/solution.py</url>
+          <line>47</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -202,11 +230,17 @@
         <watch expression="print(users_means)" language="TEXT" />
         <watch expression="len(book_ratings[book_ratings['rating_mean'].notnull()])" language="TEXT" />
         <watch expression="book_ratings['rating_mean']" language="TEXT" />
+        <watch expression="len(true_values)" language="Python" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>len(true_values)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>book_ratings['rating_mean']</expression-string>
         <language-id>TEXT</language-id>
@@ -249,11 +283,6 @@
       </expression>
       <expression>
         <expression-string>book_ratings['Book-Rating'].replace(0, np.NaN).mean()</expression-string>
-        <language-id>TEXT</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>book_ratings['Book-Rating'].replace(0,</expression-string>
         <language-id>TEXT</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -308,10 +337,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/pandas/core/indexing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="361" selection-start-line="361" selection-end-line="361" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/solution.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+        <state relative-caret-position="102">
+          <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
           <folding>
             <element signature="e#76#95#0" expanded="true" />
           </folding>
