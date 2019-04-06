@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d827b96a-a157-42c4-8012-17f667f86643" name="Default Changelist" comment="" />
+    <list default="true" id="d827b96a-a157-42c4-8012-17f667f86643" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solution.py" beforeDir="false" afterPath="$PROJECT_DIR$/solution.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,14 +15,16 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BX-Users.csv">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-357" />
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/solution.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="81" column="23" lean-forward="true" selection-start-line="81" selection-start-column="23" selection-end-line="81" selection-end-column="23" />
+            <state relative-caret-position="293">
+              <caret line="97" column="21" selection-start-line="97" selection-start-column="21" selection-end-line="97" selection-end-column="21" />
               <folding>
                 <element signature="e#76#95#0" expanded="true" />
               </folding>
@@ -40,7 +45,7 @@
         <entry file="file://$PROJECT_DIR$/BX-Books.csv">
           <provider selected="true" editor-type-id="LargeFileEditor">
             <state relative-caret-position="26724">
-              <caret line="1572" column="1" lean-forward="true" selection-start-line="1572" selection-start-column="1" selection-end-line="1572" selection-end-column="11" />
+              <caret line="1572" column="1" selection-start-line="1572" selection-start-column="1" selection-end-line="1572" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -53,6 +58,9 @@
       <find>loc</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -63,15 +71,16 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1" />
     <option name="width" value="785" />
     <option name="height" value="835" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -96,7 +105,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -180,10 +188,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25704697" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25644416" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -219,11 +226,6 @@
           <line>34</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/solution.py</url>
-          <line>80</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -237,11 +239,22 @@
       <configuration name="PythonConfigurationType">
         <watch expression="len(list_of_users)" language="Python" />
         <watch expression="len(selected_users)" language="Python" />
+        <watch expression="grouped_data.sort_values('mean_rating')" language="Python" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>grouped_data.sort_values('mean_rating')</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>grouped_data.sort('mean_rating')</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>len(selected_users)</expression-string>
         <language-id>Python</language-id>
@@ -279,16 +292,6 @@
       </expression>
       <expression>
         <expression-string>len(book_ratings[book_ratings['rating_mean'].notnull()])</expression-string>
-        <language-id>TEXT</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>book_ratings[book_ratings['rating_mean'].notnull()]</expression-string>
-        <language-id>TEXT</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>print(users_means)</expression-string>
         <language-id>TEXT</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -333,9 +336,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BX-Users.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/BX-Book-Ratings.csv">
       <provider selected="true" editor-type-id="LargeFileEditor">
         <state>
@@ -343,17 +343,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/BX-Users.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-357" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/BX-Books.csv">
       <provider selected="true" editor-type-id="LargeFileEditor">
         <state relative-caret-position="26724">
-          <caret line="1572" column="1" lean-forward="true" selection-start-line="1572" selection-start-column="1" selection-end-line="1572" selection-end-column="11" />
+          <caret line="1572" column="1" selection-start-line="1572" selection-start-column="1" selection-end-line="1572" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/solution.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="81" column="23" lean-forward="true" selection-start-line="81" selection-start-column="23" selection-end-line="81" selection-end-column="23" />
+        <state relative-caret-position="293">
+          <caret line="97" column="21" selection-start-line="97" selection-start-column="21" selection-end-line="97" selection-end-column="21" />
           <folding>
             <element signature="e#76#95#0" expanded="true" />
           </folding>

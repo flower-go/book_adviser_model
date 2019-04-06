@@ -78,5 +78,21 @@ selection_matrix = selected_data.pivot(index='User-ID', columns='ISBN', values='
 
 # TODO chci percentile
 
+# TODO odchylka
+# spočítat průměry pro knížky
+
+grouped_data = selected_data[['ISBN']]
+grouped_data['mean_rating'] = selected_data.groupby(['ISBN'])['Book-Rating'].transform("mean")
+grouped_data.drop_duplicates('ISBN')
+grouped_data = grouped_data.sort_values('mean_rating', ascending=False)
+
 print("Finished.")
-print(selection_matrix)
+print(grouped_data)
+
+# fancy vypis
+recommended_isbns = grouped_data.head(10)['ISBN']
+book_names = book_list[book_list['ISBN'].isin(recommended_isbns)]
+book_names_only = book_names.loc[:, ['Book-Title', 'Book-Author']]
+print("I recommend you these books:")
+
+print(book_names_only)
