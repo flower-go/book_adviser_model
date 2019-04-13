@@ -55,6 +55,24 @@ def calculate_mean(books_input):
     return books
 
 
+def get_weights(selected_book, border1, border2, border3):
+    if selected_book >= border1:
+        return 3
+    elif selected_book >= border2:
+        return 2
+    elif selected_book >= border1:
+        return 1
+    else:
+        return 0
+
+def get_groups(data, percentile90, percentile80, percentile70):
+    data = data.reset_index(drop=True)
+    print(len(percentile_80))
+    for index, row in data.iterrows():
+        print(index)
+
+        weight = get_weights(row['Book-Rating'], percentile90[index], percentile80[index], percentile70[index])
+
 ################################################################
 
 
@@ -67,27 +85,35 @@ book_ratings = calculate_mean(book_ratings)
 tolkien = '0345339703'
 
 selected_users = RATINGS[RATINGS['ISBN'] == tolkien]
-selected_users_above = selected_users[selected_users['Book-Rating'] > selected_users['rating_mean']]
+
+selected_users_above = selected_users[selected_users['Book-Rating'] / selected_users['rating_mean'] > 1]
 
 selected_users_above_list = selected_users_above['User-ID']
 
+
 # ziskam matici: uzivatele a kniha
 selected_data = RATINGS[RATINGS['User-ID'].isin(selected_users_above_list)]
-selected_data = selected_data[selected_data['ISBN'] != tolkien]
+
 selection_matrix = selected_data.pivot(index='User-ID', columns='ISBN', values='Book-Rating')
 
-# TODO chci percentile
+percentile_90 = selection_matrix.apply(lambda x: np.nanpercentile(x, 90), axis=1)
+percentile_80 = selection_matrix.apply(lambda x: np.nanpercentile(x, 80), axis=1)
+percentile_70 = selection_matrix.apply(lambda x: np.nanpercentile(x, 70), axis=1)
 
-# TODO odchylka
-# spočítat průměry pro knížky
 
+get_groups(selected_users, percentile_90, percentile_80, percentile_70)
+#TODO get user in groups
+
+
+selected_data = selected_data[selected_data['ISBN'] != tolkien]
 grouped_data = selected_data[['ISBN']]
 grouped_data['mean_rating'] = selected_data.groupby(['ISBN'])['Book-Rating'].transform("mean")
+# grouped_data['10th_percentile'] = selected_data['']
 grouped_data.drop_duplicates('ISBN')
 grouped_data = grouped_data.sort_values('mean_rating', ascending=False)
 
 print("Finished.")
-print(grouped_data)
+print(selection_matrix)
 
 # fancy vypis
 recommended_isbns = grouped_data.head(10)['ISBN']
